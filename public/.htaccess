@@ -1,0 +1,31 @@
+# Natro / Apache paylaşımlı hosting ayarları
+# (dist/ ile birlikte public_html'e yüklenir)
+
+# --- HTTPS'e yönlendir ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# --- Sıkıştırma ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# --- Tarayıcı önbelleği ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # İçeriği hash'li dosyalar: uzun süre
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  # HTML her zaman taze
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# --- Küçük güvenlik başlıkları ---
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

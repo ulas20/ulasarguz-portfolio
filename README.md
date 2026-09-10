@@ -27,6 +27,20 @@ npm run preview   # dist/ çıktısını yerel olarak önizle → http://localho
 `dist/` klasörünün **içeriğini** herhangi bir statik hosting hizmetine yükleyebilirsiniz
 (Netlify, Vercel, GitHub Pages, Cloudflare Pages, cPanel `public_html`, vb.).
 
+### Natro (cPanel paylaşımlı hosting) — adım adım
+
+1. `npm run build` → `dist/` üretilir. (`public/.htaccess` de otomatik `dist/` içine gelir:
+   HTTPS yönlendirme + sıkıştırma + önbellek ayarlarını yapar.)
+2. Natro paneli → **Hosting → cPanel → Dosya Yöneticisi**.
+3. `public_html/` klasörünü aç. İçinde `default.html`, `index.html` gibi hazır dosya varsa sil.
+4. `dist/` klasörünün **içindeki tüm dosyaları** (klasörü değil, içeriğini) `public_html/` içine yükle.
+   Kolayı: `dist/` içeriğini zip'leyip yükle, cPanel'de sağ tık → **Extract**. Sonra zip'i sil.
+5. Dosya Yöneticisi ayarlarından **"Show Hidden Files (dotfiles)"** açıksa `.htaccess`'in geldiğini doğrula.
+6. cPanel → **SSL/TLS Status** → alan adını seç → **Run AutoSSL** (Let's Encrypt sertifikası).
+7. `https://ulasarguz.com` aç. (DNS yeni bağlandıysa yayılması birkaç saat sürebilir.)
+
+Güncelleme: her seferinde `npm run build` → `dist/` içeriğini tekrar yükle (üzerine yaz).
+
 > **Alt dizinde yayınlama:** Site kök dizinde değil de `.../portfolio/` gibi bir alt
 > yolda yayınlanacaksa `vite.config.js` içindeki `base` değerini `'./'` yapın.
 
