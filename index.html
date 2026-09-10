@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#070b16" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8fc" media="(prefers-color-scheme: light)" />
+
+    <title>Ulaş Argüz — iOS Developer & Machine Learning</title>
+    <meta
+      name="description"
+      content="Swift ve SwiftUI ile kullanıcı odaklı iOS uygulamaları, Python ve makine öğrenmesi ile veri odaklı çözümler geliştiren iOS Developer."
+    />
+    <meta name="author" content="Ulaş Argüz" />
+    <link rel="canonical" href="https://ulasarguz.com/" />
+
+    <!-- Open Graph / Twitter — alan adınızı ve og-image'i güncelleyin -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ulaş Argüz — iOS Developer & Machine Learning" />
+    <meta property="og:description" content="Swift ile iOS uygulamaları, Python ile veri odaklı çözümler." />
+    <meta property="og:url" content="https://ulasarguz.com/" />
+    <meta property="og:image" content="https://ulasarguz.com/og-image.png" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ulaş Argüz — iOS Developer & Machine Learning" />
+    <meta name="twitter:description" content="Swift ile iOS uygulamaları, Python ile veri odaklı çözümler." />
+    <meta name="twitter:image" content="https://ulasarguz.com/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tema ve dil tercihini ilk boyamadan önce uygula (flash önleme) -->
+    <script>
+      try {
+        var stored = localStorage.getItem('theme');
+        var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
+        var root = document.documentElement;
+        root.classList.toggle('dark', theme === 'dark');
+        root.style.colorScheme = theme;
+        var lang = localStorage.getItem('locale');
+        if (lang === 'tr' || lang === 'en') root.lang = lang;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

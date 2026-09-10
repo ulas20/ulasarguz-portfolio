@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Açık tema (varsayılan değişkenler) */
+  :root {
+    --bg: 247 248 252;
+    --surface: 255 255 255;
+    --text: 15 21 38;
+    --muted: 71 82 104;
+    --faint: 120 130 148;
+    --line: 12 18 35;
+    --accent: 45 99 245;
+    --violet: 124 77 255;
+    --teal: 15 165 158;
+  }
+
+  /* Koyu tema */
+  .dark {
+    --bg: 7 11 22;
+    --surface: 13 19 34;
+    --text: 233 237 245;
+    --muted: 150 160 181;
+    --faint: 92 103 125;
+    --line: 255 255 255;
+    --accent: 96 141 255;
+    --violet: 167 122 255;
+    --teal: 61 208 196;
+  }
+
+  * {
+    border-color: rgb(var(--line) / 0.1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.25);
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+    border-radius: 6px;
+  }
+
+  /* Hareket azaltma tercihi */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(var(--line) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}

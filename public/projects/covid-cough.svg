@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Öksürük Sesinden COVID-19 Tespiti">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020" />
+      <stop offset="1" stop-color="#171430" />
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="30%" r="55%">
+      <stop offset="0" stop-color="#a77aff" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#a77aff" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity="0.04" />
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)" />
+  <rect width="1600" height="1000" fill="url(#grid)" />
+  <rect width="1600" height="1000" fill="url(#glow)" />
+  <g font-family="'Space Grotesk', Inter, system-ui, sans-serif" text-anchor="middle">
+    <text x="800" y="470" font-size="62" font-weight="700" fill="#e9edf5">Öksürük Sesinden COVID-19 Tespiti</text>
+    <text x="800" y="535" font-size="26" font-weight="500" fill="#96a0b5" font-family="'JetBrains Mono', monospace">Python · Scikit-learn · Pandas</text>
+    <text x="800" y="630" font-size="20" fill="#5c677d" font-family="'JetBrains Mono', monospace">PLACEHOLDER — public/projects/covid-cough.svg dosyasını gerçek görselle değiştirin</text>
+  </g>
+</svg>

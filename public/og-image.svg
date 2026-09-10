@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Ulaş Argüz">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b16" />
+      <stop offset="1" stop-color="#0c1428" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="15%" r="45%">
+      <stop offset="0" stop-color="#608dff" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#608dff" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="85%" cy="90%" r="45%">
+      <stop offset="0" stop-color="#a77aff" stop-opacity="0.3" />
+      <stop offset="1" stop-color="#a77aff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#608dff" />
+      <stop offset="1" stop-color="#a77aff" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow1)" />
+  <rect width="1200" height="630" fill="url(#glow2)" />
+
+  <g font-family="'Space Grotesk', Inter, system-ui, sans-serif">
+    <rect x="80" y="80" width="64" height="64" rx="16" fill="none" stroke="url(#accent)" stroke-width="2" />
+    <text x="112" y="123" text-anchor="middle" font-size="26" font-weight="700" fill="url(#accent)">UA</text>
+
+    <text x="80" y="330" font-size="86" font-weight="700" fill="#e9edf5">Ulaş Argüz</text>
+    <text x="82" y="330" font-size="86" font-weight="700" fill="url(#accent)" opacity="0.001">Ulaş Argüz</text>
+    <text x="84" y="392" font-size="30" font-weight="500" fill="#96a0b5" font-family="'JetBrains Mono', monospace">iOS Developer &amp; Machine Learning</text>
+  </g>
+
+  <text x="80" y="560" font-size="22" fill="#5c677d" font-family="'JetBrains Mono', monospace">ulasarguz.com</text>
+</svg>
