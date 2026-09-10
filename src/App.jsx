@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Preloader from './components/Preloader.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import Background from './components/Background.jsx';
@@ -10,13 +12,16 @@ import Timeline from './components/sections/Timeline.jsx';
 import Contact from './components/sections/Contact.jsx';
 
 export default function App() {
+  const [revealed, setRevealed] = useState(false);
+
   return (
     <>
+      <Preloader onReveal={() => setRevealed(true)} />
       <SkipLink />
       <Background />
       <Navbar />
       <main id="main">
-        <Hero />
+        <Hero start={revealed} />
         <About />
         <Skills />
         <Projects />

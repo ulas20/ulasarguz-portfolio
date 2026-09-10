@@ -12,7 +12,7 @@ const codeSnippet = `let focus = Focus(
   goal: "build → measure → improve"
 )`;
 
-export default function Hero() {
+export default function Hero({ start = true }) {
   const { t } = useLocale();
   const reduce = useReducedMotion();
 
@@ -37,7 +37,7 @@ export default function Hero() {
         <motion.div
           variants={parent}
           initial="hidden"
-          animate="visible"
+          animate={start ? 'visible' : 'hidden'}
           className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"
         >
           <div>
