@@ -1,0 +1,2 @@
+# CV PDF dosyanızı bu klasöre "ulas-arguz-cv.pdf" adıyla koyun.
+# Farklı ad için src/config/site.js -> cvPath güncelleyin.

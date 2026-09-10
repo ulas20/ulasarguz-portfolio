@@ -1,0 +1,8 @@
+# Netlify kullanırsan: bu dosya build ayarlarını otomatik yapar.
+# (Vercel / Cloudflare Pages için gerek yok — onlar Vite'i kendi algılar.)
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
