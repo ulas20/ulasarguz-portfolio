@@ -13,6 +13,15 @@ const ICONS = {
   database: Database,
 };
 
+// Her kategoriye kendi rengi — tek düze griden çıkar, ama hâlâ ölçülü.
+const ICON_COLOR = {
+  ios: 'text-accent',
+  backend: 'text-teal',
+  ai: 'text-violet',
+  tools: 'text-lamp',
+  db: 'text-accent',
+};
+
 export default function Skills() {
   const { t } = useLocale();
   const allTech = t.skills.categories.flatMap((category) => category.items);
@@ -29,7 +38,7 @@ export default function Skills() {
               <Reveal key={category.id} delay={i * 0.04}>
                 <div className="grid gap-4 py-6 sm:grid-cols-[200px_1fr] sm:items-center">
                   <div className="flex items-center gap-3">
-                    <Icon className="h-5 w-5 text-accent" />
+                    <Icon className={`h-5 w-5 ${ICON_COLOR[category.id] ?? 'text-accent'}`} />
                     <span className="font-display text-lg font-medium text-ink">
                       {category.label}
                     </span>

@@ -16,6 +16,7 @@ export default {
         accent: 'rgb(var(--accent) / <alpha-value>)',
         violet: 'rgb(var(--violet) / <alpha-value>)',
         teal: 'rgb(var(--teal) / <alpha-value>)',
+        lamp: 'rgb(var(--lamp) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],

@@ -59,6 +59,11 @@ export const en = {
       { label: 'Focus', value: 'iOS · Machine Learning' },
       { label: 'Status', value: 'Open to new projects' },
     ],
+    lamp: {
+      hint: 'Try switching the light on and off',
+      turnOff: 'Turn the light off',
+      turnOn: 'Turn the light on',
+    },
   },
 
   skills: {

@@ -1,6 +1,7 @@
 import Container from '../Container.jsx';
 import SectionHeading from '../SectionHeading.jsx';
 import Reveal from '../Reveal.jsx';
+import StreetLamp from './StreetLamp.jsx';
 import { useLocale } from '../../context/LocaleContext.jsx';
 
 export default function About() {
@@ -20,18 +21,24 @@ export default function About() {
             ))}
           </div>
 
-          <Reveal delay={0.1}>
-            <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line/10 bg-line/[0.06]">
-              {t.about.facts.map((fact) => (
-                <div key={fact.label} className="bg-bg p-5">
-                  <dt className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
-                    {fact.label}
-                  </dt>
-                  <dd className="mt-1.5 text-sm font-medium text-ink">{fact.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
+          <div>
+            <Reveal delay={0.1}>
+              <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line/10 bg-line/[0.06]">
+                {t.about.facts.map((fact) => (
+                  <div key={fact.label} className="bg-bg p-5">
+                    <dt className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                      {fact.label}
+                    </dt>
+                    <dd className="mt-1.5 text-sm font-medium text-ink">{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <StreetLamp />
+            </Reveal>
+          </div>
         </div>
       </Container>
     </section>

@@ -60,6 +60,11 @@ export const tr = {
       { label: 'Odak', value: 'iOS · Makine Öğrenmesi' },
       { label: 'Durum', value: 'Yeni projelere açık' },
     ],
+    lamp: {
+      hint: 'Işığı kapatıp açmayı dene',
+      turnOff: 'Işığı kapat',
+      turnOn: 'Işığı aç',
+    },
   },
 
   skills: {
