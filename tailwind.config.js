@@ -35,11 +35,21 @@ export default {
           '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
           '50%': { transform: 'translate3d(0, 28px, 0)' },
         },
+        'avatar-float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-14px)' },
+        },
+        'avatar-shadow': {
+          '0%, 100%': { transform: 'translateX(-50%) scaleX(1)', opacity: '0.5' },
+          '50%': { transform: 'translateX(-50%) scaleX(0.84)', opacity: '0.3' },
+        },
       },
       animation: {
         marquee: 'marquee 32s linear infinite',
         'float-slow': 'float-slow 14s ease-in-out infinite',
         'float-slower': 'float-slower 18s ease-in-out infinite',
+        'avatar-float': 'avatar-float 6s ease-in-out infinite',
+        'avatar-shadow': 'avatar-shadow 6s ease-in-out infinite',
       },
     },
   },

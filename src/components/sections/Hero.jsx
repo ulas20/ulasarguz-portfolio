@@ -5,12 +5,7 @@ import Button from '../Button.jsx';
 import { useLocale } from '../../context/LocaleContext.jsx';
 import { scrollToId } from '../../lib/scroll.js';
 import { EASE } from '../../lib/motion.js';
-
-const codeSnippet = `let focus = Focus(
-  ios:  ["Swift", "SwiftUI", "UIKit"],
-  data: ["Python", "ML", "FastAPI"],
-  goal: "build → measure → improve"
-)`;
+import HeroAvatar from './HeroAvatar.jsx';
 
 export default function Hero({ start = true }) {
   const { t } = useLocale();
@@ -77,20 +72,9 @@ export default function Hero({ start = true }) {
             </motion.div>
           </div>
 
-          <motion.div variants={item} className="relative">
-            <div className="absolute -inset-6 -z-10 rounded-full bg-accent/15 blur-3xl" />
-            <div className="overflow-hidden rounded-2xl border border-line/10 bg-surface/70 backdrop-blur-sm">
-              <div className="flex items-center gap-2 border-b border-line/10 px-4 py-3">
-                <span className="h-3 w-3 rounded-full bg-line/20" />
-                <span className="h-3 w-3 rounded-full bg-line/20" />
-                <span className="h-3 w-3 rounded-full bg-line/20" />
-                <span className="ml-2 font-mono text-xs text-ink-faint">{t.hero.codeCaption}</span>
-              </div>
-              <pre className="overflow-x-auto p-5 font-mono text-[13px] leading-relaxed text-ink-muted">
-                <code>{codeSnippet}</code>
-              </pre>
-            </div>
-          </motion.div>
+          <div className="relative">
+            <HeroAvatar start={start} />
+          </div>
         </motion.div>
       </Container>
     </section>
