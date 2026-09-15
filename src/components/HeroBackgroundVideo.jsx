@@ -21,7 +21,7 @@ const OBJECT_POSITION = '58% 32%';
  * - Düşük opaklık + grayscale/contrast/brightness filtreleri ve üstteki
  *   koyulaştırma katmanları, metnin okunabilirliğini korumak için var.
  */
-export default function HeroBackgroundVideo({ className = '' }) {
+export default function HeroBackgroundVideo({ className = '', opacityClass = 'opacity-25', showScrim = true }) {
   const [allowMotion, setAllowMotion] = useState(false);
   const [failed, setFailed] = useState(false);
 
@@ -44,8 +44,7 @@ export default function HeroBackgroundVideo({ className = '' }) {
 
   if (failed) return null;
 
-  const mediaClassName =
-    'h-full w-full object-cover opacity-25 grayscale contrast-125 brightness-75';
+  const mediaClassName = `h-full w-full object-cover ${opacityClass} grayscale contrast-125 brightness-75`;
   const mediaStyle = { objectPosition: OBJECT_POSITION };
 
   return (
@@ -78,10 +77,14 @@ export default function HeroBackgroundVideo({ className = '' }) {
         />
       )}
 
-      {/* Soldan (metnin durduğu taraf) sağa doğru açılan koyu perde — okunabilirlik güvencesi */}
-      <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/35 to-transparent" />
-      {/* Üstten alta doğru koyulaşan ince vinyet */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg/60" />
+      {showScrim && (
+        <>
+          {/* Soldan (metnin durduğu taraf) sağa doğru açılan koyu perde — okunabilirlik güvencesi */}
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/35 to-transparent" />
+          {/* Üstten alta doğru koyulaşan ince vinyet */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg/60" />
+        </>
+      )}
     </div>
   );
 }

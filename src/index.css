@@ -19,8 +19,8 @@
 
   /* Koyu tema */
   .dark {
-    --bg: 7 11 22;
-    --surface: 13 19 34;
+    --bg: 3 5 11;
+    --surface: 8 12 22;
     --text: 233 237 245;
     --muted: 150 160 181;
     --faint: 92 103 125;
