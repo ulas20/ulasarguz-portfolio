@@ -7,14 +7,15 @@ import {
   useReducedMotion,
 } from 'framer-motion';
 import { EASE } from '../../lib/motion.js';
+import InteractiveCharacter from '../InteractiveCharacter.jsx';
 
 // Hero'nun sağ sütunundaki karakter illüstrasyonu.
 // - Giriş: perde kalkınca alttan yükselerek belirir
 // - Sürekli: hafif nefes/süzülme + ayak altında yere basan gölge
-// - Masaüstü: imleç paralaksı — figür ile arkasındaki ışık ters yönde kayar
-// - Masaüstü: kafa imlece doğru döner/kayar (public/ulas-avatar-head.webp,
-//   gövdeden ayrı bir katman — bkz. body/head görsellerinin nasıl üretildiği
-//   için aşağıdaki not)
+// - Masaüstü: imleç paralaksı — figürün tamamı (asla dönmeden) ve
+//   arkasındaki ışık ters yönde hafifçe kayar
+// - Kafanın imleci takip etmesi ayrı, yeniden kullanılabilir
+//   InteractiveCharacter bileşenindedir (bkz. src/components/InteractiveCharacter.jsx)
 export default function HeroAvatar({ start = true }) {
   const reduce = useReducedMotion();
   const ref = useRef(null);
@@ -29,11 +30,6 @@ export default function HeroAvatar({ start = true }) {
   const figureY = useTransform(sy, [-0.5, 0.5], [-10, 10]);
   const glowX = useTransform(sx, [-0.5, 0.5], [24, -24]);
   const glowY = useTransform(sy, [-0.5, 0.5], [18, -18]);
-
-  // Kafa — imlece doğru hafifçe döner/kayar (boyun hizasından pivot).
-  const headRotate = useTransform(sx, [-0.5, 0.5], [-7, 7]);
-  const headX = useTransform(sx, [-0.5, 0.5], [-6, 6]);
-  const headY = useTransform(sy, [-0.5, 0.5], [-4, 4]);
 
   useEffect(() => {
     if (reduce) return undefined;
@@ -87,40 +83,18 @@ export default function HeroAvatar({ start = true }) {
         className="absolute bottom-2 left-1/2 h-5 w-40 -translate-x-1/2 rounded-[50%] bg-black/50 blur-md motion-safe:animate-avatar-shadow dark:bg-black/60 sm:w-44"
       />
 
-      {/* Figür — dış katman: imleç paralaksı, iç katman: nefes/süzülme */}
+      {/* Figür — dış katman: imleç paralaksı (TÜM figür, asla dönmez), iç katman: nefes/süzülme */}
       <motion.div
         style={reduce ? undefined : { x: figureX, y: figureY }}
         className="relative h-full"
       >
-        <div className="relative inline-block h-full motion-safe:animate-avatar-float">
-          <img
-            src="/ulas-avatar-body.webp"
+        <div
+          className="relative mx-auto h-full motion-safe:animate-avatar-float"
+          style={{ aspectRatio: '489 / 1421' }}
+        >
+          <InteractiveCharacter
             alt="Ulaş Argüz illüstrasyonu"
-            width={489}
-            height={1421}
-            fetchpriority="high"
-            decoding="async"
-            draggable="false"
-            className="h-full w-auto select-none object-contain drop-shadow-[0_24px_38px_rgba(0,0,0,0.4)]"
-          />
-          {/* Kafa ayrı katman: imleç konumuna göre döner/kayar */}
-          <motion.img
-            src="/ulas-avatar-head.webp"
-            alt=""
-            aria-hidden="true"
-            width={223}
-            height={226}
-            decoding="async"
-            draggable="false"
-            style={{
-              left: '22.09%',
-              top: '0%',
-              width: '45.6%',
-              height: '15.9%',
-              transformOrigin: '50% 90%',
-              ...(reduce ? {} : { rotate: headRotate, x: headX, y: headY }),
-            }}
-            className="pointer-events-none absolute select-none object-contain"
+            className="drop-shadow-[0_24px_38px_rgba(0,0,0,0.4)]"
           />
         </div>
       </motion.div>
