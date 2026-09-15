@@ -70,13 +70,6 @@
 }
 
 @layer utilities {
-  .bg-grid {
-    background-image:
-      linear-gradient(rgb(var(--line) / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(var(--line) / 0.06) 1px, transparent 1px);
-    background-size: 64px 64px;
-  }
-
   .text-balance {
     text-wrap: balance;
   }
