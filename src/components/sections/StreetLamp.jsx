@@ -40,21 +40,6 @@ export default function StreetLamp() {
           className="relative mx-auto h-56 w-full max-w-[220px] transition-transform duration-200 group-hover:-translate-y-0.5 group-active:translate-y-0 motion-reduce:group-hover:translate-y-0"
           aria-hidden="true"
         >
-          <defs>
-            <linearGradient id="lampCone" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="rgb(var(--lamp))" stopOpacity="0.35" />
-              <stop offset="1" stopColor="rgb(var(--lamp))" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-
-          {/* Işık konisi */}
-          <motion.polygon
-            points="80,72 38,206 122,206"
-            fill="url(#lampCone)"
-            animate={{ opacity: on ? 1 : 0 }}
-            transition={{ duration: dur }}
-          />
-
           {/* Zemin */}
           <line x1="20" y1="206" x2="140" y2="206" className="stroke-line/15" strokeWidth="1" />
 
