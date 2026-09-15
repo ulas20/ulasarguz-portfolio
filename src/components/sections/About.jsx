@@ -1,7 +1,6 @@
 import Container from '../Container.jsx';
 import SectionHeading from '../SectionHeading.jsx';
 import Reveal from '../Reveal.jsx';
-import StreetLamp from './StreetLamp.jsx';
 import { useLocale } from '../../context/LocaleContext.jsx';
 
 export default function About() {
@@ -33,10 +32,6 @@ export default function About() {
                   </div>
                 ))}
               </dl>
-            </Reveal>
-
-            <Reveal delay={0.15}>
-              <StreetLamp />
             </Reveal>
           </div>
         </div>
