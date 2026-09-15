@@ -114,8 +114,8 @@ export const en = {
         ],
         tech: ['Swift', 'UIKit', 'REST API', 'Payments'],
         image: '/projects/smart-beauty.svg',
-        github: 'https://github.com/ulas20',
-        demo: '',
+        github: '',
+        demo: 'https://apps.apple.com/tr/app/smart-beauty-skincare-beauty/id6744248583?l=tr',
       },
       {
         slug: 'covid-cough-detection',
