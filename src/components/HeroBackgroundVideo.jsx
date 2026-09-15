@@ -7,21 +7,25 @@ const POSTER_SRC = '/images/horse-poster.webp';
 // Videonun kendi kadrajına göre ayarlanmış odak noktası — at, object-fit:
 // cover kenarlardan kırparken kadraj dışına çıkmasın diye. Videoyu
 // değiştirirsen bu değeri yeni kareye göre gözle ince ayar yap.
-const OBJECT_POSITION = '58% 32%';
+const OBJECT_POSITION = '58% 30%';
 
 /**
- * Hero'nun arkasında, karakterin ve metnin GERİSİNDE duran sinematik video
- * katmanı. Kendi başına hiçbir görünür kontrol/ses/oynatma düğmesi yok,
- * hiçbir mouse/dokunma olayını yakalamaz (`pointer-events-none`).
+ * Sayfanın TAMAMI boyunca sabit (fixed) duran sinematik video arka planı —
+ * Background.jsx'in yanında, aynı mantıkla: bir kere App'te mount edilir,
+ * scroll ile birlikte hareket etmez/değişmez. Sayfa içeriği (her bölümün
+ * kendi metni) bunun ÜZERİNDE normal akışta kayar ve doğal olarak değişir.
+ *
+ * Kendi başına hiçbir görünür kontrol/ses/oynatma düğmesi yok, hiçbir
+ * mouse/dokunma olayını yakalamaz (`pointer-events-none`).
  *
  * - 768px altı VEYA prefers-reduced-motion: reduce → video hiç oynatılmaz,
  *   yerine üretilmiş poster (WebP) görseli aynı stille gösterilir.
- * - Video (veya poster) yüklenemezse bileşen kendini gizler; Hero, altındaki
- *   mevcut gradient arka planla (Background.jsx) sorunsuz çalışmaya devam eder.
- * - Düşük opaklık + grayscale/contrast/brightness filtreleri ve üstteki
- *   koyulaştırma katmanları, metnin okunabilirliğini korumak için var.
+ * - Video (veya poster) yüklenemezse bileşen kendini gizler; sayfa,
+ *   Background.jsx'in mevcut gradient/ışık küreleriyle sorunsuz çalışır.
+ * - Düşük opaklık + grayscale/contrast/brightness filtreleri ve ince bir
+ *   vinyet, metnin her bölümde okunabilir kalmasını garanti eder.
  */
-export default function HeroBackgroundVideo({ className = '', opacityClass = 'opacity-25', showScrim = true }) {
+export default function HeroBackgroundVideo({ opacityClass = 'opacity-[0.16]' }) {
   const [allowMotion, setAllowMotion] = useState(false);
   const [failed, setFailed] = useState(false);
 
@@ -48,10 +52,7 @@ export default function HeroBackgroundVideo({ className = '', opacityClass = 'op
   const mediaStyle = { objectPosition: OBJECT_POSITION };
 
   return (
-    <div
-      aria-hidden="true"
-      className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}
-    >
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-[5] overflow-hidden">
       {allowMotion ? (
         <video
           className={mediaClassName}
@@ -77,14 +78,8 @@ export default function HeroBackgroundVideo({ className = '', opacityClass = 'op
         />
       )}
 
-      {showScrim && (
-        <>
-          {/* Soldan (metnin durduğu taraf) sağa doğru açılan koyu perde — okunabilirlik güvencesi */}
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/35 to-transparent" />
-          {/* Üstten alta doğru koyulaşan ince vinyet */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg/60" />
-        </>
-      )}
+      {/* İnce vinyet — üstten ve alttan hafifçe koyulaştırır, metni her bölümde korur */}
+      <div className="absolute inset-0 bg-gradient-to-b from-bg/70 via-transparent to-bg/80" />
     </div>
   );
 }

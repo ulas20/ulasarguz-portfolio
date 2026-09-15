@@ -3,8 +3,11 @@ import Preloader from './components/Preloader.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import Background from './components/Background.jsx';
+import HeroBackgroundVideo from './components/HeroBackgroundVideo.jsx';
 import SkipLink from './components/SkipLink.jsx';
-import IntroStory from './components/sections/IntroStory.jsx';
+import Hero from './components/sections/Hero.jsx';
+import About from './components/sections/About.jsx';
+import Skills from './components/sections/Skills.jsx';
 import Projects from './components/sections/Projects.jsx';
 import Timeline from './components/sections/Timeline.jsx';
 import Contact from './components/sections/Contact.jsx';
@@ -17,9 +20,12 @@ export default function App() {
       <Preloader onReveal={() => setRevealed(true)} />
       <SkipLink />
       <Background />
+      <HeroBackgroundVideo />
       <Navbar />
       <main id="main">
-        <IntroStory start={revealed} />
+        <Hero start={revealed} />
+        <About />
+        <Skills />
         <Projects />
         <Timeline />
         <Contact />

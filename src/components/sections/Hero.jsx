@@ -6,7 +6,6 @@ import { useLocale } from '../../context/LocaleContext.jsx';
 import { scrollToId } from '../../lib/scroll.js';
 import { EASE } from '../../lib/motion.js';
 import HeroAvatar from './HeroAvatar.jsx';
-import HeroBackgroundVideo from '../HeroBackgroundVideo.jsx';
 
 export default function Hero({ start = true }) {
   const { t } = useLocale();
@@ -29,8 +28,7 @@ export default function Hero({ start = true }) {
 
   return (
     <section id="hero" className="relative scroll-mt-24 pb-20 pt-32 sm:pb-28 sm:pt-40">
-      <HeroBackgroundVideo />
-      <Container className="relative z-10">
+      <Container>
         <motion.div
           variants={parent}
           initial="hidden"
