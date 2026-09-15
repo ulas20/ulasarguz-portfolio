@@ -89,6 +89,21 @@ export const tr = {
     close: 'Kapat',
     items: [
       {
+        slug: 'eczanem-yaninda',
+        title: 'Eczanem Yanımda',
+        summary:
+          'Yakındaki nöbetçi eczaneleri bulan, favori eczaneleri kaydeden ve ilaç hatırlatıcıları oluşturan, App Store\'da yayında olan iOS uygulaması.',
+        description: [
+          'Eczanem Yanımda, kullanıcının bulunduğu konuma göre en yakın nöbetçi eczaneleri hızlıca listeleyen bir iOS uygulaması. Şehir/ilçe filtreleme ve harita entegrasyonuyla eczane arama akışını sadeleştiriyor.',
+          'Favori eczane kaydetme ve başlangıç tarihi/saatiyle ilaç takip planı oluşturma özellikleriyle günlük kullanımda pratik bir asistan olmayı hedefliyor; bildirimlerle hatırlatma saatleri kaçırılmıyor.',
+          'VoiceOver desteği, karanlık mod ve altı dilde (Türkçe, İngilizce, Almanca, Fransızca, İspanyolca, Rusça) yerelleştirmeyle geniş bir kitleye hitap ediyor. Şu anda App Store\'da yayında.',
+        ],
+        tech: ['Swift', 'SwiftUI', 'Core Location', 'MapKit', 'Bildirimler'],
+        image: '/projects/eczanem-yaninda.svg',
+        github: '',
+        demo: 'https://apps.apple.com/tr/app/eczanem-yan%C4%B1mda/id6759851143?l=tr',
+      },
+      {
         slug: 'smart-beauty-ios',
         title: 'Smart Beauty iOS',
         summary:

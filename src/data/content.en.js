@@ -88,6 +88,21 @@ export const en = {
     close: 'Close',
     items: [
       {
+        slug: 'eczanem-yaninda',
+        title: 'Eczanem Yanımda (My Nearby Pharmacy)',
+        summary:
+          'An iOS app, live on the App Store, that finds nearby on-duty pharmacies, saves favorites, and sets medication reminders.',
+        description: [
+          'Eczanem Yanımda quickly lists the closest on-duty pharmacies based on the user\'s location. City/district filtering and a map integration keep the pharmacy search flow simple.',
+          'Favorite-pharmacy bookmarking and medication plans with a start date/time make it a practical daily assistant; notifications make sure reminder times are never missed.',
+          'VoiceOver support, dark mode, and localization into six languages (Turkish, English, German, French, Spanish, Russian) give it broad reach. Currently live on the App Store.',
+        ],
+        tech: ['Swift', 'SwiftUI', 'Core Location', 'MapKit', 'Notifications'],
+        image: '/projects/eczanem-yaninda.svg',
+        github: '',
+        demo: 'https://apps.apple.com/tr/app/eczanem-yan%C4%B1mda/id6759851143?l=tr',
+      },
+      {
         slug: 'smart-beauty-ios',
         title: 'Smart Beauty iOS',
         summary:
