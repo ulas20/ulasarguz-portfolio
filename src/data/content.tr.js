@@ -36,7 +36,7 @@ export const tr = {
   },
 
   hero: {
-    role: 'iOS Developer & Machine Learning Enthusiast',
+    role: 'iOS Developer & Machine Learning',
     greeting: 'Merhaba, ben Ulaş.',
     description:
       'Swift ve SwiftUI ile kullanıcı odaklı iOS uygulamaları geliştiriyor; Python ve makine öğrenmesi ile veri odaklı çözümler üretiyorum. Tasarımı, teknolojiyi ve iş ihtiyaçlarını aynı üründe buluşturmayı seviyorum.',
@@ -56,7 +56,7 @@ export const tr = {
     ],
     facts: [
       { label: 'Eğitim', value: 'Yönetim Bilişim Sistemleri' },
-      { label: 'Konum', value: 'İstanbul, Türkiye' },
+      { label: 'Konum', value: 'Denizli, Türkiye' },
       { label: 'Odak', value: 'iOS · Makine Öğrenmesi' },
       { label: 'Durum', value: 'Yeni projelere açık' },
     ],
@@ -159,7 +159,7 @@ export const tr = {
       {
         id: 'edu-1',
         type: 'education',
-        date: '2021 — 2025',
+        date: '2022 — Devam ediyor',
         org: 'Üniversite',
         role: 'Yönetim Bilişim Sistemleri, Lisans',
         points: [
@@ -170,24 +170,14 @@ export const tr = {
       {
         id: 'work-1',
         type: 'work',
-        date: '2024',
+        // TODO: Şirket adını kendi stajınla değiştir.
+        date: '2026',
         org: 'Teknoloji Şirketi (Staj)',
         role: 'iOS Developer Stajyeri',
         points: [
           'Mevcut bir iOS uygulamasında yeni ekranların Swift ile geliştirilmesi.',
           'REST API entegrasyonları ve hata ayıklama süreçlerine katkı.',
           'Kod incelemeleri ve sürüm yönetimi pratikleri (Git).',
-        ],
-      },
-      {
-        id: 'work-2',
-        type: 'work',
-        date: '2025',
-        org: 'Bağımsız',
-        role: 'iOS & ML Projeleri',
-        points: [
-          'Swift ile kişisel iOS uygulamaları ve API tabanlı çözümler.',
-          'Python ile veri analizi ve makine öğrenmesi denemeleri.',
         ],
       },
     ],

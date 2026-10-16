@@ -35,7 +35,7 @@ export const en = {
   },
 
   hero: {
-    role: 'iOS Developer & Machine Learning Enthusiast',
+    role: 'iOS Developer & Machine Learning',
     greeting: "Hi, I'm Ulaş.",
     description:
       'I build user-focused iOS apps with Swift and SwiftUI, and data-driven solutions with Python and machine learning. I like bringing design, technology and business needs together in one product.',
@@ -55,7 +55,7 @@ export const en = {
     ],
     facts: [
       { label: 'Education', value: 'Management Information Systems' },
-      { label: 'Location', value: 'Istanbul, Türkiye' },
+      { label: 'Location', value: 'Denizli, Türkiye' },
       { label: 'Focus', value: 'iOS · Machine Learning' },
       { label: 'Status', value: 'Open to new projects' },
     ],
@@ -158,7 +158,7 @@ export const en = {
       {
         id: 'edu-1',
         type: 'education',
-        date: '2021 — 2025',
+        date: '2022 — Present',
         org: 'University',
         role: 'BSc, Management Information Systems',
         points: [
@@ -169,24 +169,14 @@ export const en = {
       {
         id: 'work-1',
         type: 'work',
-        date: '2024',
+        // TODO: Replace with your actual employer.
+        date: '2026',
         org: 'Technology Company (Internship)',
         role: 'iOS Developer Intern',
         points: [
           'Built new screens in an existing iOS app with Swift.',
           'Contributed to REST API integrations and debugging.',
           'Practiced code review and version control (Git).',
-        ],
-      },
-      {
-        id: 'work-2',
-        type: 'work',
-        date: '2025',
-        org: 'Independent',
-        role: 'iOS & ML Projects',
-        points: [
-          'Personal iOS apps and API-based solutions with Swift.',
-          'Data analysis and machine learning experiments with Python.',
         ],
       },
     ],
