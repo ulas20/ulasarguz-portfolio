@@ -5,6 +5,7 @@ import Footer from './components/Footer.jsx';
 import Background from './components/Background.jsx';
 import HeroBackgroundVideo from './components/HeroBackgroundVideo.jsx';
 import SkipLink from './components/SkipLink.jsx';
+import ScrollToTopButton from './components/ScrollToTopButton.jsx';
 import Hero from './components/sections/Hero.jsx';
 import About from './components/sections/About.jsx';
 import Skills from './components/sections/Skills.jsx';
@@ -31,6 +32,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTopButton />
     </>
   );
 }
